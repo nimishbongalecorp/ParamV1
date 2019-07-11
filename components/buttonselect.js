@@ -15,15 +15,15 @@ export default class hello extends Component {
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#6c5cff', '#A477FF', '#d379e2']}>
-                        <Text style={styles.buttonText}>
+                    <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']}>
+                        <Text style={styles.buttonTextnew}>
                             Protected
                      </Text>
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#6c5cff', '#A477FF', '#d379e2']} onAccessibilityTap={() => { this.setState }}>
-                        <Text style={styles.buttonText}>
+                    <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']} onAccessibilityTap={() => { this.setState }}>
+                        <Text style={styles.buttonTextnew}>
                             Public
                      </Text>
                     </LinearGradient>

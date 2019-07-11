@@ -7,6 +7,7 @@ import { Card, CardItem } from "native-base";
 import { FloatingAction } from 'react-native-floating-action';
 import Drawer from 'react-native-drawer';
 import CustomDrawer from './CustomDrawer';
+import DrawerActions from 'react-navigation';
 
 export default class hello extends React.Component {
 
@@ -32,7 +33,7 @@ export default class hello extends React.Component {
         ),
 
         headerRight: (
-            <TouchableOpacity onPress={() => ToastAndroid.show('Notifications', ToastAndroid.SHORT)}>
+            <TouchableOpacity onPress={() => ToastAndroid.show('Notification', ToastAndroid.SHORT)}>
                 <View style={{ paddingRight: 24 }}>
                     <Image
                         style={{ width: 20, height: 22, overlayColor: 'black' }} source={require('./drawable-hdpi/bell.png')}>
@@ -42,7 +43,7 @@ export default class hello extends React.Component {
         ),
 
         headerLeft: (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => ToastAndroid.show('Menu', ToastAndroid.SHORT)}>
                 <View style={{ paddingLeft: 19 }}>
                     <Icon name='menu'
                         color='#0091ff' style={{ width: 18, height: 12 }}>
@@ -60,6 +61,7 @@ export default class hello extends React.Component {
                 ref={(ref) => this._drawer = ref}
                 tapToClose={true}
                 openDrawerOffset={0.2}
+                negotiatePan={true}
                 content={<CustomDrawer />}>
 
                 <ScrollableTabView

@@ -3,7 +3,8 @@ import { AppRegistry, View, Text, StyleSheet, Dimensions, Image, ScrollView } fr
 import { Icon, Button } from 'react-native-elements';
 var { width } = Dimensions.get('window');
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
-import { CardItem, Card } from "native-base";
+import { CardItem, Card, Container, Content, Body, Header } from "native-base";
+import TabLinGrad from '../Tablingrad';
 
 export default class hello extends React.Component {
     constructor(props) {
@@ -25,17 +26,14 @@ export default class hello extends React.Component {
 
     render() {
         return (
-            <ScrollableTabView
-                style={{ marginBottom: 5, }}
-                initialPage={0}
-                tabBarUnderlineStyle={{ backgroundColor: '#6c5cff' }}
-                tabBarActiveTextColor={'#6c5cff'}
-                tabBarInactiveTextColor={'#000'}
-                tabBarBackgroundColor={'#f8f9fd'}
-                renderTabBar={() => <ScrollableTabBar />}
-            >
-                <View tabLabel='Menu' style={{ backgroundColor: '#f8f9fd' }}>
-                    <ScrollView>
+            <Container>
+                <Header style={{ backgroundColor: '#f8f9fd' }}>
+                    <Content>
+                        <TabLinGrad />
+                    </Content>
+                </Header>
+                <Content>
+                    <View style={{ backgroundColor: '#f8f9fd' }}>
                         <View style={{ width: 335, alignSelf: 'center' }}>
                             <Card noShadow>
                                 <CardItem>
@@ -58,7 +56,7 @@ export default class hello extends React.Component {
                                 <CardItem>
                                     <Text style={styles.text}>
                                         Subscribers
-                                 </Text>
+ </Text>
                                     <Text style={{ fontFamily: 'Lato-Regular', fontSize: 14, color: '#0091ff' }}>                                            +Add More</Text>
                                 </CardItem>
                                 <CardItem>
@@ -116,58 +114,20 @@ export default class hello extends React.Component {
                                     <Text style={styles.textcustomnote}>
                                         Custom Note{'\n\n'}
                                         Approved for the welfare of Gotham City
-                                     </Text>
+     </Text>
                                 </CardItem>
                             </Card>
+                            <Text />
+                            <View style={{ width: 309, alignSelf: 'center' }}>
+                                <Button title='CONFIRM' onPress={() => {
+                                    this.props.navigation.navigate('graphone')
+                                }}></Button>
+                            </View>
+                            <Text />
                         </View>
-                    </ScrollView>
-                </View>
-                <View tabLabel='Graph 1' style={{ backgroundColor: '#f8f9fd' }}>
-                    <View style={{ width: 335, alignSelf: 'center' }}>
-                        <CardItem>
-                            <Image style={{ height: 300, width: 300 }} source={{ uri: 'https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20180109030108/neo4j-bitcoin.png' }} />
-                        </CardItem>
-                        <Text>{'\n\n\n\n\n\n\n'}</Text>
-                        <View style={{ width: 309, alignSelf: 'center' }}>
-                            <Button title='CONFIRM'></Button>
-                        </View>
-                    </View>
-                </View>
-                <View tabLabel='jsonLD' style={{ backgroundColor: '#f8f9fd' }}>
-                    <View style={{ width: 335, alignSelf: 'center' }}>
-                        <Card noShadow>
-                            <CardItem>
-                                <Text style={styles.jsonldheader}>jsonLd{'\n\n'}
-                                    <Text style={styles.textJSONLD}>
-                                        {'\{\n'}
-                                        "@context": "https://json-ld.org/contexts/person.jsonld",{'\n'}
-                                        "@id": "http://dbpedia.org/resource/John_Lennon",{'\n'}
-                                        "name": "John Lennon",{'\n'}
-                                        "born": "1940-10-09",{'\n'}
-                                        "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
-                        {'\n\}'}
-                                    </Text></Text>
-                            </CardItem>
-                        </Card>
-                        <Text>{'\n\n\n\n\n\n\n\n\n\n\n\n'}</Text>
-                        <View style={{ width: 309, alignSelf: 'center' }}>
-                            <Button title='CONFIRM'></Button>
-                        </View>
-                    </View>
-                </View>
-                <View tabLabel='Graph 2' style={{ backgroundColor: '#f8f9fd' }}>
-                    <View style={{ width: 335, alignSelf: 'center' }}>
-                        <CardItem>
-                            <Image style={{ height: 300, width: 300 }} source={{ uri: 'https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20180109030108/neo4j-bitcoin.png' }} />
-                        </CardItem>
-                        <Text>{'\n\n\n\n\n\n\n'}</Text>
-                        <View style={{ width: 309, alignSelf: 'center' }}>
-                            <Button title='CONFIRM'></Button>
-                        </View>
-                    </View>
-                </View>
-            </ScrollableTabView>
-
+                    </View >
+                </Content>
+            </Container>
         );
     }
 }

@@ -23,6 +23,7 @@ export default class TextInputInScrollView extends Component {
             qty: '',
             amt: '',
             custnote: '',
+            pressbut: 1,
             height: 0,
         }
     }
