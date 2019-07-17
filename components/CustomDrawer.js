@@ -22,13 +22,13 @@ export default class CustomDrawer extends Component {
                     <ListItem />
                     <ListItem style={styles.listitem}>
                         <Left>
-                            <Image style={styles.image} source={require('./drawable-hdpi/icon.png')}></Image>
+                            <Image style={styles.image} source={require('../assets/icon.png')}></Image>
                             <Text style={styles.innertext}>     Contracts</Text>
                         </Left>
                     </ListItem>
                     <ListItem style={styles.listitem}>
                         <Left>
-                            <Image style={styles.image} source={require('./drawable-hdpi/icon1.png')}></Image>
+                            <Image style={styles.image} source={require('../assets/icon1.png')}></Image>
                             <Text style={styles.innertext}>     Orders</Text>
                         </Left>
                     </ListItem>
@@ -40,19 +40,19 @@ export default class CustomDrawer extends Component {
                     </ListItem>
                     <ListItem style={styles.listitem}>
                         <Left>
-                            <Image style={styles.image} source={require('./drawable-hdpi/icon2.png')}></Image>
+                            <Image style={styles.image} source={require('../assets/icon2.png')}></Image>
                             <Text style={styles.innertext}>     Team</Text>
                         </Left>
                     </ListItem>
                     <ListItem style={styles.listitem}>
                         <Left>
-                            <Image style={styles.image} source={require('./drawable-hdpi/icon3.png')}></Image>
+                            <Image style={styles.image} source={require('../assets/icon3.png')}></Image>
                             <Text style={styles.innertext}>      e-LR</Text>
                         </Left>
                     </ListItem>
                     <ListItem style={styles.listitem}>
                         <Left>
-                            <Image style={styles.image} source={require('./drawable-hdpi/icon4.png')}></Image>
+                            <Image style={styles.image} source={require('../assets/icon4.png')}></Image>
                             <Text style={styles.innertext}>      Customers</Text>
                         </Left>
                     </ListItem>

@@ -11,7 +11,7 @@ export default class hello1 extends Component {
             <View style={{ flexDirection: 'row', alignSelf: 'center', backgroundColor: '#f8f9fd' }}>
                 <TouchableOpacity style={{ borderColor: 'gray' }}>
                     <LinearGradient style={styles.linearGradient1} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#6c5cff', '#A477FF', '#d379e2']}>
-                        <Image source={require('./drawable-hdpi/hamburger.png')} style={{ height: 13, width: 16 }} />
+                        <Image source={require('./assets/hamburger.png')} style={{ height: 13, width: 16 }} />
                     </LinearGradient>
                 </TouchableOpacity>
 
@@ -20,7 +20,7 @@ export default class hello1 extends Component {
                     this.render()
                 }}>
                     <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#fff', '#FFF', '#fff']}>
-                        <Image source={require('./drawable-hdpi/bar_chart.png')} style={{ height: 15, width: 19 }} />
+                        <Image source={require('./assets/bar_chart.png')} style={{ height: 15, width: 19 }} />
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
@@ -28,7 +28,7 @@ export default class hello1 extends Component {
                     this.render()
                 }}>
                     <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#fff', '#fff', '#fff']} onAccessibilityTap={() => { this.setState }}>
-                        <Image source={require('./drawable-hdpi/invalid_name.png')} style={{ height: 17, width: 18 }} />
+                        <Image source={require('./assets/invalid_name.png')} style={{ height: 17, width: 18 }} />
                     </LinearGradient>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
