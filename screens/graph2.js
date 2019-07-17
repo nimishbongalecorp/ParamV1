@@ -25,11 +25,6 @@ export default class hello extends React.Component {
     render() {
         return (
             <Container style={{ backgroundColor: '#f8f9fd' }}>
-                <Header style={{ backgroundColor: '#f8f9fd' }}>
-                    <Content>
-                        <Tablingrad />
-                    </Content>
-                </Header>
                 <View style={{ width: 335, alignSelf: 'center' }}>
                     <Card noShadow>
                         <CardItem>
@@ -40,7 +35,7 @@ export default class hello extends React.Component {
                 <Text>{'\n\n\n\n\n\n'}</Text>
                 <View style={{ width: 309, alignSelf: 'center' }}>
                     <Button title='CONFIRM' onPress={() => {
-                        this.props.navigation.navigate('home')
+                        ToastAndroid.show('Confirmed!', ToastAndroid.SHORT)
                     }}></Button>
                     <Text />
                 </View>

@@ -1,9 +1,10 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, ToastAndroid } from "react-native";
 import { Icon, Button } from 'react-native-elements';
 var { width } = Dimensions.get('window');
 import { Card, CardItem, Header, Content, Container } from "native-base";
 import Tablingrad from '../Tablingrad';
+import { ToolbarAndroid } from "react-native-gesture-handler";
 
 export default class hello extends React.Component {
     constructor(props) {
@@ -25,11 +26,6 @@ export default class hello extends React.Component {
     render() {
         return (
             <Container style={{ backgroundColor: '#f8f9fd' }}>
-                <Header style={{ backgroundColor: '#f8f9fd' }}>
-                    <Content>
-                        <Tablingrad />
-                    </Content>
-                </Header>
                 <View style={{ width: 335, alignSelf: 'center' }}>
                     <Card noShadow>
                         <CardItem>
@@ -40,7 +36,7 @@ export default class hello extends React.Component {
                 <Text>{'\n\n\n\n\n\n'}</Text>
                 <View style={{ width: 309, alignSelf: 'center' }}>
                     <Button title='CONFIRM' onPress={() => {
-                        this.props.navigation.navigate('jsonLD')
+                        ToastAndroid.show('Confirmed!', ToastAndroid.SHORT)
                     }}></Button>
                     <Text />
                 </View>
