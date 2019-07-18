@@ -55,7 +55,7 @@ export default class hello extends React.Component {
     render() {
         return (
             <ScrollableTabView
-                style={{ marginTop: 5 }}
+                style={styles.ScrollableTabView}
                 initialPage={0}
                 tabBarUnderlineStyle={{ backgroundColor: '#6c5cff' }}
                 tabBarActiveTextColor={'#4a4a4a'}
@@ -64,7 +64,7 @@ export default class hello extends React.Component {
                 }
             >
 
-                <View tabLabel='QUOTATIONS' style={{ backgroundColor: '#f8f9fd' }}>
+                <View tabLabel='QUOTATIONS' style={styles.tab}>
                     <ScrollView>
                         <View>
                             <Text style={styles.textinitial}>
@@ -72,7 +72,7 @@ export default class hello extends React.Component {
                             </Text>
                             <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
                         </View>
-                        <View style={{ width: 335, alignSelf: 'center' }}>
+                        <View style={{ marginLeft: 13, marginRight: 12, justifyContent: 'center' }}>
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('TO')}>
                                 <Card noShadow>
                                     <CardItem header style={styles.cardItem1}>
@@ -197,6 +197,13 @@ const styles = StyleSheet.create({
         borderTopColor: '#e5eced',
         borderRightColor: '#e5eced',
         borderBottomColor: '#e5eced',
+    },
+    tab: {
+        backgroundColor: '#f8f9fd',
+        flex: 1
+    },
+    ScrollableTabView: {
+        marginTop: 5,
     }
 
 });
