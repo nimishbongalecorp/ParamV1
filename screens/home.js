@@ -4,8 +4,9 @@ import { Icon } from 'react-native-elements';
 var { width } = Dimensions.get('window');
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
 import { Card, CardItem } from "native-base";
-
 import { FloatingAction } from 'react-native-floating-action';
+import Drawer from 'react-native-drawer';
+import DrawerActions from 'react-navigation';
 
 export default class hello extends React.Component {
 
@@ -41,7 +42,7 @@ export default class hello extends React.Component {
         ),
 
         headerLeft: (
-            <TouchableOpacity onPress={navigation.toggleDrawer}>
+            <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                 <View style={{ paddingLeft: 19 }}>
                     <Icon name='menu'
                         color='#0091ff' style={{ width: 18, height: 12 }}>
@@ -49,8 +50,7 @@ export default class hello extends React.Component {
                 </View>
             </TouchableOpacity>
         ),
-    }
-    );
+    });
 
     render() {
         return (

@@ -5,10 +5,16 @@ var { width } = Dimensions.get('window');
 import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
 import { CardItem, Card, Container, Content, Body, Header } from "native-base";
 import TabLinGrad from '../Tablingrad';
+import Graph1 from './graph1';
+import Graph2 from './graph2';
+import JsonLD from './jsonld';
 
 export default class hello extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            presbut: 1
+        }
     }
 
     static navigationOptions = {
@@ -25,110 +31,144 @@ export default class hello extends React.Component {
     };
 
     render() {
-        return (
-            <Container>
-                <Header style={{ backgroundColor: '#f8f9fd' }}>
+        if (this.state.presbut === 1) {
+            return (
+                <Container>
+                    <Header style={{ backgroundColor: '#f8f9fd' }}>
+                        <Content>
+                            <TabLinGrad setParentState={newState => this.setState(newState)} />
+                        </Content>
+                    </Header>
                     <Content>
-                        <TabLinGrad />
-                    </Content>
-                </Header>
-                <Content>
-                    <View style={{ backgroundColor: '#f8f9fd' }}>
-                        <View style={{ width: 335, alignSelf: 'center' }}>
-                            <Card noShadow>
-                                <CardItem>
-                                    <Text style={styles.text1}>
-                                        {'\n'}STARK INDUSTRIES{'\n'}
-                                        <Text style={styles.text2}>
-                                            Quotation #27282928292829</Text>
-                                    </Text>
+                        <View style={{ backgroundColor: '#f8f9fd' }}>
+                            <View style={{ width: 335, alignSelf: 'center' }}>
+                                <Card noShadow>
+                                    <CardItem>
+                                        <Text style={styles.text1}>
+                                            {'\n'}STARK INDUSTRIES{'\n'}
+                                            <Text style={styles.text2}>
+                                                Quotation #27282928292829</Text>
+                                        </Text>
 
-                                </CardItem>
-                                <CardItem>
-                                    <Text style={styles.text3}>
-                                        Quotation type: <Text style={{ color: '#0091ff' }}>Private  </Text>
-                                    </Text>
-                                    <Icon type='font-awesome' name='lock' color='#0091ff' iconStyle={{ width: 15, height: 20 }}>
-                                    </Icon>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Text style={styles.text3}>
+                                            Quotation type: <Text style={{ color: '#0091ff' }}>Private  </Text>
+                                        </Text>
+                                        <Icon type='font-awesome' name='lock' color='#0091ff' iconStyle={{ width: 15, height: 20 }}>
+                                        </Icon>
 
-                                </CardItem>
-                                <Text style={styles.text3}>      06-03-2019</Text>
-                                <CardItem>
-                                    <Text style={styles.text}>
-                                        Subscribers
+                                    </CardItem>
+                                    <Text style={styles.text3}>      06-03-2019</Text>
+                                    <CardItem>
+                                        <Text style={styles.text}>
+                                            Subscribers
  </Text>
-                                    <Text style={{ fontFamily: 'Lato-Regular', fontSize: 14, color: '#0091ff' }}>                                            +Add More</Text>
-                                </CardItem>
-                                <CardItem>
-                                    <Text style={styles.text2}>
-                                        Wayne Corporations{'\n'}
-                                        Stark Industries{'\n'}
-                                    </Text>
-                                </CardItem>
-                            </Card>
-                            <Card noShadow>
-                                <CardItem>
-                                    <Text style={styles.text1}>
-                                        ITEMS(03){'\n\n'}
+                                        <Text style={{ fontFamily: 'Lato-Regular', fontSize: 14, color: '#0091ff' }}>                                            +Add More</Text>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Text style={styles.text2}>
+                                            Wayne Corporations{'\n'}
+                                            Stark Industries{'\n'}
+                                        </Text>
+                                    </CardItem>
+                                </Card>
+                                <Card noShadow>
+                                    <CardItem>
+                                        <Text style={styles.text1}>
+                                            ITEMS(03){'\n\n'}
+                                            <Text style={styles.textpanel}>
+                                                Panel cyx with dimension 1/4            $10000{'\n'}
+
+                                                <Text style={styles.innertext}>
+                                                    {'\n'}Type:Goods{'\n'}
+                                                    Unit Price:$1000{'\n'}
+                                                    Quantity:10{'\n'}
+                                                </Text>
+                                                <Text style={{ color: '#e5eced' }}>    ______________________________________________</Text></Text>
+                                        </Text>
+                                    </CardItem>
+
+                                    <CardItem>
                                         <Text style={styles.textpanel}>
                                             Panel cyx with dimension 1/4            $10000{'\n'}
-
                                             <Text style={styles.innertext}>
                                                 {'\n'}Type:Goods{'\n'}
                                                 Unit Price:$1000{'\n'}
                                                 Quantity:10{'\n'}
                                             </Text>
                                             <Text style={{ color: '#e5eced' }}>    ______________________________________________</Text></Text>
-                                    </Text>
-                                </CardItem>
+                                    </CardItem>
 
-                                <CardItem>
-                                    <Text style={styles.textpanel}>
-                                        Panel cyx with dimension 1/4            $10000{'\n'}
-                                        <Text style={styles.innertext}>
-                                            {'\n'}Type:Goods{'\n'}
-                                            Unit Price:$1000{'\n'}
-                                            Quantity:10{'\n'}
+                                    <CardItem>
+                                        <Text style={styles.textpanel}>
+                                            Panel cyx with dimension 1/4            $10000{'\n'}
+                                            <Text style={styles.innertext}>
+                                                {'\n'}Type:Goods{'\n'}
+                                                Unit Price:$1000{'\n'}
+                                                Quantity:10{'\n'}
+                                            </Text>
+                                            <Text style={{ color: '#e5eced' }}>    ______________________________________________</Text></Text>
+                                    </CardItem>
+
+                                    <CardItem>
+                                        <Text style={styles.textpanel}>                               Sub Total           $30000.00{'\n'}                              - - - - - - - - - - - - - - - - - - - - - - - -{'\n'}                               Round Off          $30000.00{'\n\n'}                               Total                    $30000.00{'\n'}
                                         </Text>
-                                        <Text style={{ color: '#e5eced' }}>    ______________________________________________</Text></Text>
-                                </CardItem>
-
-                                <CardItem>
-                                    <Text style={styles.textpanel}>
-                                        Panel cyx with dimension 1/4            $10000{'\n'}
-                                        <Text style={styles.innertext}>
-                                            {'\n'}Type:Goods{'\n'}
-                                            Unit Price:$1000{'\n'}
-                                            Quantity:10{'\n'}
-                                        </Text>
-                                        <Text style={{ color: '#e5eced' }}>    ______________________________________________</Text></Text>
-                                </CardItem>
-
-                                <CardItem>
-                                    <Text style={styles.textpanel}>                               Sub Total           $30000.00{'\n'}                              - - - - - - - - - - - - - - - - - - - - - - - -{'\n'}                               Round Off          $30000.00{'\n\n'}                               Total                    $30000.00{'\n'}
-                                    </Text>
-                                </CardItem>
-                            </Card>
-                            <Card noShadow>
-                                <CardItem>
-                                    <Text style={styles.textcustomnote}>
-                                        Custom Note{'\n\n'}
-                                        Approved for the welfare of Gotham City
+                                    </CardItem>
+                                </Card>
+                                <Card noShadow>
+                                    <CardItem>
+                                        <Text style={styles.textcustomnote}>
+                                            Custom Note{'\n\n'}
+                                            Approved for the welfare of Gotham City
      </Text>
-                                </CardItem>
-                            </Card>
-                            <Text />
-                            <View style={{ width: 309, alignSelf: 'center' }}>
-                                <Button title='CONFIRM' onPress={() => {
-                                    this.props.navigation.navigate('graphone')
-                                }}></Button>
+                                    </CardItem>
+                                </Card>
                             </View>
-                            <Text />
-                        </View>
-                    </View >
-                </Content>
-            </Container>
-        );
+                        </View >
+                    </Content>
+                </Container>
+            );
+        }
+        else if (this.state.presbut === 2)
+            return (
+                <Container>
+                    <Header style={{ backgroundColor: '#f8f9fd' }}>
+                        <Content>
+                            <TabLinGrad setParentState={newState => this.setState(newState)} />
+                        </Content>
+                    </Header>
+                    <Content>
+                        <Graph1 />
+                    </Content>
+                </Container>
+            )
+        else if (this.state.presbut === 3)
+            return (
+                <Container>
+                    <Header style={{ backgroundColor: '#f8f9fd' }}>
+                        <Content>
+                            <TabLinGrad setParentState={newState => this.setState(newState)} />
+                        </Content>
+                    </Header>
+                    <Content>
+                        <JsonLD />
+                    </Content>
+                </Container>
+            )
+        else
+            return (
+                <Container>
+                    <Header style={{ backgroundColor: '#f8f9fd' }}>
+                        <Content>
+                            <TabLinGrad setParentState={newState => this.setState(newState)} />
+                        </Content>
+                    </Header>
+                    <Content>
+                        <Graph2 />
+                    </Content>
+                </Container>
+            )
     }
 }
 
