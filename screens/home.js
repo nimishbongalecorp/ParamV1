@@ -6,7 +6,6 @@ import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab
 import { Card, CardItem } from "native-base";
 import { FloatingAction } from 'react-native-floating-action';
 import Drawer from 'react-native-drawer';
-import CustomDrawer from './CustomDrawer';
 import DrawerActions from 'react-navigation';
 
 export default class hello extends React.Component {
@@ -29,14 +28,14 @@ export default class hello extends React.Component {
 
 
         headerTitle: (
-            <Image style={{ width: 32, height: 32 }} source={require('./drawable-hdpi/group_4.png')} />
+            <Image style={{ width: 32, height: 32 }} source={require('../assets/group_4.png')} />
         ),
 
         headerRight: (
             <TouchableOpacity onPress={() => ToastAndroid.show('Notification', ToastAndroid.SHORT)}>
                 <View style={{ paddingRight: 24 }}>
                     <Image
-                        style={{ width: 20, height: 22, overlayColor: 'black' }} source={require('./drawable-hdpi/bell.png')}>
+                        style={{ width: 20, height: 22, overlayColor: 'black' }} source={require('../assets/bell.png')}>
                     </Image>
                 </View>
             </TouchableOpacity>
@@ -78,7 +77,7 @@ export default class hello extends React.Component {
                         <ScrollView>
                             <View>
                                 <Text style={styles.textinitial}>
-                                    {'\n\n'}    QUOTATIONS  <Image style={{ width: 14.2, height: 10.2 }} source={require('./drawable-hdpi/launch_arrow.png')} />
+                                    {'\n\n'}    QUOTATIONS  <Image style={{ width: 14.2, height: 10.2 }} source={require('../assets/launch_arrow.png')} />
                                 </Text>
                                 <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
                             </View>
