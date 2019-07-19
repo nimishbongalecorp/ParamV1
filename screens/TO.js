@@ -41,8 +41,8 @@ export default class hello extends React.Component {
                     </Header>
                     <Content>
                         <View style={{ backgroundColor: '#f8f9fd' }}>
-                            <View style={{ width: 335, alignSelf: 'center' }}>
-                                <Card noShadow>
+                            <View style={{ marginLeft: 12, marginRight: 12, alignSelf: 'center' }}>
+                                <Card style={{ elevation: 3 }}>
                                     <CardItem>
                                         <Text style={styles.text1}>
                                             {'\n'}STARK INDUSTRIES{'\n'}
@@ -73,7 +73,7 @@ export default class hello extends React.Component {
                                         </Text>
                                     </CardItem>
                                 </Card>
-                                <Card noShadow>
+                                <Card style={{ elevation: 3 }}>
                                     <CardItem>
                                         <Text style={styles.text1}>
                                             ITEMS(03){'\n\n'}
@@ -116,7 +116,7 @@ export default class hello extends React.Component {
                                         </Text>
                                     </CardItem>
                                 </Card>
-                                <Card noShadow>
+                                <Card style={{ elevation: 3 }}>
                                     <CardItem>
                                         <Text style={styles.textcustomnote}>
                                             Custom Note{'\n\n'}

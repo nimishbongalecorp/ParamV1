@@ -6,6 +6,8 @@ import { Card, CardItem } from 'native-base';
 import { ToastAndroid } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import ButtonSelect from '../components/buttonselect';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import CardAdd from '../components/cardadd'
 
 
 
@@ -53,8 +55,8 @@ export default class TextInputInScrollView extends Component {
                 Keyboard.dismiss()
             }}>
                 <KeyboardAwareScrollView ref='scrollView' contentContainerStyle={styles.scrollStyle}>
-                    <View style={{ width: 326, alignSelf: 'center' }}>
-                        <Card noShadow>
+                    <View style={{ marginLeft: 12, marginRight: 12, alignSelf: 'center' }}>
+                        <Card styles={{ elevation: 3 }}>
                             <CardItem>
                                 <TextInput
                                     placeholder={'Customer Name                                                                '}
@@ -88,7 +90,7 @@ export default class TextInputInScrollView extends Component {
                             </CardItem>
                         </Card>
                         <Text style={styles.text1}>{'\n'}  Add Items</Text>
-                        <Card noShadow>
+                        <Card styles={{ elevation: 3 }}>
                             <CardItem>
                                 <TextInput
                                     placeholder={'Name                                                                  '}
@@ -154,8 +156,8 @@ export default class TextInputInScrollView extends Component {
                                 />
                             </CardItem>
                         </Card>
-                        <Text style={styles.text2}> {'\n'}+Add Another Line   |   +Add items in bulk   | {'\n'} Scan Bar Code{'\n'}</Text>
-                        <Card noShadow>
+                        <CardAdd />
+                        <Card styles={{ elevation: 3 }}>
                             <CardItem>
                                 <Text>{'\n\n\n\n\n'}</Text>
                                 <TextInput

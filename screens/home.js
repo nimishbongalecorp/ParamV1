@@ -1,12 +1,9 @@
 import React from "react";
-import { AppRegistry, View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, ToastAndroid, ScrollView } from "react-native";
+import { AppRegistry, View, Text, StyleSheet, Dimensions, TouchableOpacity, TouchableHighlight, Image, ToastAndroid, ScrollView } from "react-native";
 import { Icon } from 'react-native-elements';
 var { width } = Dimensions.get('window');
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
-import { Card, CardItem } from "native-base";
-import { FloatingAction } from 'react-native-floating-action';
-import Drawer from 'react-native-drawer';
-import DrawerActions from 'react-navigation';
+import { Card, CardItem, Right, Content, Left, Header, Container } from "native-base";
 
 export default class hello extends React.Component {
 
@@ -64,63 +61,111 @@ export default class hello extends React.Component {
                 }
             >
 
-                <View tabLabel='QUOTATIONS' style={styles.tab}>
-                    <ScrollView>
-                        <View>
-                            <Text style={styles.textinitial}>
-                                {'\n\n'}    QUOTATIONS  <Image style={{ width: 14.2, height: 10.2 }} source={require('../assets/launch_arrow.png')} />
-                            </Text>
-                            <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
-                        </View>
-                        <View style={{ marginLeft: 13, marginRight: 12, justifyContent: 'center' }}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('TO')}>
-                                <Card noShadow>
-                                    <CardItem header style={styles.cardItem1}>
-                                        <Text style={styles.textPrimary}>Korea Retail 1                                         $25000.00{'\n\n'}
-                                            <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
-                                        </Text>
-                                    </CardItem>
-                                </Card>
-                            </TouchableOpacity>
-                            <Card noShadow>
-                                <CardItem header style={styles.cardItem1}>
-                                    <Text style={styles.textPrimary}>Stark Industries                                      $25000.00{'\n\n'}
-                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
-                                    </Text>
-                                </CardItem>
-                            </Card>
-                            <Card noShadow>
-                                <CardItem header style={styles.cardItem1}>
-                                    <Text style={styles.textPrimary}>India Distributor                                      $25000.00{'\n\n'}
+                <View tabLabel='QUOTATIONS' style={{ flex: 1 }}>
+                    <Container style={{ backgroundColor: '#f8f9fd' }} >
+                        <Content>
+                            <View>
+                                <Text style={styles.textinitial}>
+                                    {'\n\n'}    QUOTATIONS  <Image style={{ width: 14.2, height: 10.2 }} source={require('../assets/launch_arrow.png')} />
+                                </Text>
+                                <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
+                            </View>
+                            <View style={{ marginLeft: 13, marginRight: 12 }}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('TO')}>
+                                    <Card styles={{ elevation: 3 }}>
+                                        <Content>
+                                            <CardItem header style={styles.cardItem1}>
+                                                <Left>
+                                                    <View style={{ flexDirection: 'column' }}>
+                                                        <Text style={styles.textPrimary}>Korea Retail 1{'\n'}</Text>
+                                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                                    </View>
+                                                </Left>
+                                                <Right>
+                                                    <Text style={styles.textPrimary}>$25000.00</Text>
+                                                </Right>
+                                            </CardItem>
+                                        </Content>
+                                    </Card>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Card styles={{ elevation: 3 }}>
+                                        <Content>
+                                            <CardItem header style={styles.cardItem1}>
+                                                <Left>
+                                                    <View style={{ flexDirection: 'column' }}>
+                                                        <Text style={styles.textPrimary}>Stark Industries{'\n'}</Text>
+                                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                                    </View>
+                                                </Left>
+                                                <Right>
+                                                    <Text style={styles.textPrimary}>$25000.00</Text>
+                                                </Right>
+                                            </CardItem>
+                                        </Content>
+                                    </Card>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Card styles={{ elevation: 3 }}>
+                                        <Content>
+                                            <CardItem header style={styles.cardItem1}>
+                                                <Left>
+                                                    <View style={{ flexDirection: 'column' }}>
+                                                        <Text style={styles.textPrimary}>India Distributor{'\n'}</Text>
+                                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                                    </View>
+                                                </Left>
+                                                <Right>
+                                                    <Text style={styles.textPrimary}>$25000.00</Text>
+                                                </Right>
+                                            </CardItem>
+                                        </Content>
+                                    </Card>
+                                </TouchableOpacity>
 
-                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
-                                    </Text>
-                                </CardItem>
-                            </Card>
-
-                            <Card noShadow>
-                                <CardItem header style={styles.cardItem1}>
-                                    <Text style={styles.textPrimary}>Korea Retail 2                                         $25000.00{'\n\n'}
-
-                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
-                                    </Text>
-                                </CardItem>
-                            </Card>
-
-                            <Card noShadow>
-                                <CardItem header style={styles.cardItem1}>
-                                    <Text style={styles.textPrimary}>India Distributor                                      $25000.00{'\n\n'}
-
-                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
-                                    </Text>
-                                </CardItem>
-                            </Card>
-                        </View>
-                    </ScrollView>
-                    <FloatingAction color='#FFBA39'
-                        onOpen={() => this.props.navigation.navigate('AddScreen')} />
+                                <TouchableOpacity>
+                                    <Card styles={{ elevation: 3 }}>
+                                        <Content>
+                                            <CardItem header style={styles.cardItem1}>
+                                                <Left>
+                                                    <View style={{ flexDirection: 'column' }}>
+                                                        <Text style={styles.textPrimary}>Korea Retail 2{'\n'}</Text>
+                                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                                    </View>
+                                                </Left>
+                                                <Right>
+                                                    <Text style={styles.textPrimary}>$25000.00</Text>
+                                                </Right>
+                                            </CardItem>
+                                        </Content>
+                                    </Card>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Card styles={{ elevation: 3 }}>
+                                        <Content>
+                                            <CardItem header style={styles.cardItem1}>
+                                                <Left>
+                                                    <View style={{ flexDirection: 'column' }}>
+                                                        <Text style={styles.textPrimary}>India Distributor{'\n'}</Text>
+                                                        <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                                    </View>
+                                                </Left>
+                                                <Right>
+                                                    <Text style={styles.textPrimary}>$25000.00</Text>
+                                                </Right>
+                                            </CardItem>
+                                        </Content>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+                        </Content>
+                    </Container>
+                    <TouchableHighlight style={styles.addButton}
+                        underlayColor='#FFBA3A' onPress={() => { this.props.navigation.navigate('AddScreen') }}>
+                        <Text style={{ fontSize: 38, color: 'white', fontFamily: 'Avenir-Heavy' }}>+</Text>
+                    </TouchableHighlight>
                 </View>
-                <View tabLabel='PO' ></View>
+                <View tabLabel='PO'></View>
                 <View tabLabel='INVOICE'></View>
             </ScrollableTabView>
         );
@@ -132,6 +177,87 @@ AppRegistry.registerComponent(
     () => hello());
 
 const styles = StyleSheet.create({
+    MainContainer:
+    {
+        flex: 1,
+        backgroundColor: '#f8f9fd',
+        justifyContent: 'center',
+    },
+
+    Animated_View_Style:
+    {
+        height: 320,
+        backgroundColor: '#f8f9fd',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    View_Inside_Text:
+    {
+        color: '#fff',
+        fontSize: 24
+    },
+
+    TouchableOpacityStyle: {
+
+        position: 'absolute',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    container: {
+        flex: 1
+    },
+
+    safe: {
+        flex: 1,
+        backgroundColor: '#F2F4FF',
+    },
+    text1: {
+        color: 'gray',
+        fontFamily: 'Avenir-Heavy',
+        fontSize: 16,
+    },
+
+    text2: {
+        color: '#0077ff',
+        fontFamily: 'ProximaNova-Regular',
+        fontSize: 14,
+    },
+
+    buttoncontainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+    },
+
+    placeholderStyle: {
+        fontSize: 14,
+        color: '#fff',
+    },
+    scrollStyle: {
+        flexGrow: 1,
+        justifyContent: 'center',
+        backgroundColor: '#F2F4FF',
+    },
+    textInputStyle: {
+        height: 35,
+        color: '#000',
+        fontSize: 14,
+        textAlign: 'left',
+        textAlignVertical: 'center',
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        paddingLeft: 10,
+        borderRadius: 5,
+        borderColor: '#fff',
+        borderWidth: 0.5,
+        backgroundColor: '#fff',
+        borderBottomWidth: 2,
+        borderBottomColor: '#e6e6e6',
+    },
     textstyle2: {
         color: '#354052',
         fontFamily: 'Lato-Regular',
@@ -185,6 +311,13 @@ const styles = StyleSheet.create({
         color: '#222222',
         fontFamily: 'Avenir-Roman'
     },
+
+    textRight: {
+        fontSize: 14,
+        color: '#222222',
+        fontFamily: 'Avenir-Roman',
+        textAlign: 'right',
+    },
     textSecondaryHeading: {
         fontSize: 14,
         color: 'gray',
@@ -198,14 +331,32 @@ const styles = StyleSheet.create({
         borderRightColor: '#e5eced',
         borderBottomColor: '#e5eced',
     },
-    tab: {
-        backgroundColor: '#f8f9fd',
-        flex: 1
-    },
+
     ScrollableTabView: {
         marginTop: 5,
-    }
-
+        flexDirection: 'column',
+        justifyContent: 'space-evenly'
+    },
+    addButton: {
+        backgroundColor: '#FFBA3A',
+        borderColor: '#FFBA3A',
+        borderWidth: 1,
+        height: 60,
+        width: 60,
+        borderRadius: 65,
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        position: 'absolute',
+        bottom: 20,
+        right: 20,
+        shadowColor: "#000000",
+        shadowOpacity: 1,
+        shadowRadius: 20,
+        shadowOffset: {
+            height: 1,
+            width: 0,
+        }
+    },
 });
 
 
