@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { TouchableOpacity } from 'react-native';
-import { Container } from 'native-base';
 import { Icon } from 'react-native-elements';
 
 export default class hello1 extends Component {
@@ -13,6 +12,7 @@ export default class hello1 extends Component {
             presbut: 1
         }
     }
+
     render() {
         if (this.state.presbut === 1) {
             return (

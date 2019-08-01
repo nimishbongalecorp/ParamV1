@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
-import { Icon, Button } from 'react-native-elements';
+import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { Button } from 'react-native-elements';
 var { width } = Dimensions.get('window');
-import { CardItem, Card, Container, Header, Content } from "native-base";
-import Tablingrad from '../Tablingrad';
+import { CardItem, Card, Container} from "native-base";
 
 export default class hello extends React.Component {
     constructor(props) {

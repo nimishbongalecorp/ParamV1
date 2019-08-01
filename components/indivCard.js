@@ -1,71 +1,39 @@
 import React from "react";
-import { AppRegistry, View, Text, StyleSheet, Dimensions, TouchableOpacity, TouchableHighlight, Image, ToastAndroid, ScrollView, FlatList } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 var { width } = Dimensions.get('window');
-import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
-import { Content, Container } from "native-base";
-import IndivCard from '../components/indivCard';
+import { Card, CardItem, Right, Content, Left } from "native-base";
+import { withNavigation } from 'react-navigation';
 
-export default class hello extends React.Component {
+class hello2 extends React.Component {
 
     constructor(props) {
         super(props);
     }
+
     render() {
-        
-        const data = [
-            'Stark Industries',
-            'Korea Retail',
-            'ABC Corporation',
-            'India Retail'
-        ]
-
         return (
-            <ScrollableTabView
-                style={styles.ScrollableTabView}
-                initialPage={0}
-                tabBarUnderlineStyle={{ backgroundColor: '#6c5cff' }}
-                tabBarActiveTextColor={'#4a4a4a'}
-                tabBarInactiveTextColor={'#3b3b3b'}
-                renderTabBar={() => <ScrollableTabBar />
-                }
-            >
-
-                <View tabLabel='QUOTATIONS' style={{ flex: 1 }}>
-                    <Container style={{ backgroundColor: '#f8f9fd' }} >
-                        <Content>
-                            <View>
-                                <Text style={styles.textinitial}>
-                                    {'\n\n'}    QUOTATIONS  <Image style={{ width: 14.2, height: 10.2 }} source={require('../assets/launch_arrow.png')} />
-                                </Text>
-                                <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
-                            </View>
-                            <View style={{ marginLeft: 13, marginRight: 12 }}>
-                                {data.map((item, key) => (
-                                    <IndivCard key={key} title={item}></IndivCard>)
-                                )}
-                            </View>
-                        </Content>
-                    </Container>
-                    <TouchableHighlight style={styles.addButton}
-                        underlayColor='#FFBA3A' onPress={() => { this.props.navigation.navigate('AddScreen') }}>
-                        <Text style={styles.floattext}>+</Text>
-                    </TouchableHighlight>
-                </View>
-                <View tabLabel='PO'></View>
-                <View tabLabel='INVOICE' style={{ flex: 1 }}>
-                    <TouchableHighlight style={styles.addButton}
-                        underlayColor='#FFBA3A' onPress={() => { this.props.navigation.navigate('AddScreen1') }}>
-                        <Text style={styles.floattext}>+</Text>
-                    </TouchableHighlight>
-                </View>
-            </ScrollableTabView>
-        );
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('TO')}>
+                <Card styles={{ elevation: 3 }}>
+                    <Content>
+                        <CardItem header style={styles.cardItem1}>
+                            <Left>
+                                <View style={{ flexDirection: 'column' }}>
+                                    <Text style={styles.textPrimary}>{this.props.title}{'\n'}</Text>
+                                    <Text style={styles.textSecondaryHeading}>1234567890123456 | 06-03-2019</Text>
+                                </View>
+                            </Left>
+                            <Right>
+                                <Text style={styles.textPrimary}>$25000.00</Text>
+                            </Right>
+                        </CardItem>
+                    </Content>
+                </Card>
+            </TouchableOpacity>
+        )
     }
 }
 
-AppRegistry.registerComponent(
-    'Day3App',
-    () => hello());
+export default withNavigation(hello2)
 
 const styles = StyleSheet.create({
     MainContainer:
@@ -73,12 +41,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f8f9fd',
         justifyContent: 'center',
-    },
-
-    floattext: {
-        fontSize: 38,
-        color: 'white',
-        fontFamily: 'Avenir-Heavy'
     },
 
     Animated_View_Style:
@@ -255,9 +217,5 @@ const styles = StyleSheet.create({
         }
     },
 });
-
-
-
-
 
 

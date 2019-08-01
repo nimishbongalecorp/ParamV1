@@ -3,8 +3,6 @@ import { StyleSheet, TextInput, View, Text, Image, ScrollView, TouchableOpacity,
 import { SafeAreaView } from 'react-navigation';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Card, CardItem } from 'native-base';
-import { ToastAndroid } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
 
 export default class MyApp extends Component {
     constructor() {
@@ -232,7 +230,7 @@ export default class MyApp extends Component {
                     <View style={{backgroundColor:'#f8f9fd'}}>
                     <TouchableOpacity style={{ backgroundColor: '#f8f9fd' }}
                         onPress={this.Add_New_View_Function}>
-                        <Text style={styles.text2}> {'\n'}+Add Another Line   |   +Add items in bulk   | {'\n'} Scan Bar Code{'\n'}</Text>
+                        <Text style={styles.text2}> {'\n'}   +Add Another Line   |   +Add items in bulk   | {'\n'}   Scan Bar Code{'\n'}</Text>
                         </TouchableOpacity>
                         </View>
                 </ScrollView>

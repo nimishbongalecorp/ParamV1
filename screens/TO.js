@@ -1,9 +1,8 @@
 import React from "react";
-import { AppRegistry, View, Text, StyleSheet, Dimensions, Image, ScrollView } from "react-native";
-import { Icon, Button } from 'react-native-elements';
+import { AppRegistry, View, Text, StyleSheet, Dimensions } from "react-native";
+import { Icon } from 'react-native-elements';
 var { width } = Dimensions.get('window');
-import ScrollableTabView, { ScrollableTabBar, } from 'react-native-scrollable-tab-view';
-import { CardItem, Card, Container, Content, Body, Header } from "native-base";
+import { CardItem, Card, Container, Content, Header } from "native-base";
 import TabLinGrad from '../Tablingrad';
 import Graph1 from './graph1';
 import Graph2 from './graph2';

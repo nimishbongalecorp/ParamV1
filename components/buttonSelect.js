@@ -46,7 +46,7 @@ export default class hello extends Component {
         else if (this.state.presbut === 2)
             return (
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity style={{ borderColor: 'gray' }} onPress={()=> 
+                    <TouchableOpacity style={{ borderColor: 'gray' }} onPress={() =>
                         this.setState({ presbut: 1 })
                     }>
                         <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']}>
@@ -62,7 +62,7 @@ export default class hello extends Component {
                      </Text>
                         </LinearGradient>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=> 
+                    <TouchableOpacity onPress={() =>
                         this.setState({ presbut: 3 })
                     }>
                         <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']} onAccessibilityTap={() => { this.setState }}>
@@ -76,7 +76,7 @@ export default class hello extends Component {
         else
             return (
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity style={{ borderColor: 'gray' }} onPress={()=> 
+                    <TouchableOpacity style={{ borderColor: 'gray' }} onPress={() =>
                         this.setState({ presbut: 1 })
                     }>
                         <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']}>
@@ -85,7 +85,7 @@ export default class hello extends Component {
                     </Text>
                         </LinearGradient>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={()=> 
+                    <TouchableOpacity onPress={() =>
                         this.setState({ presbut: 2 })
                     }>
                         <LinearGradient style={styles.linearGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#F5F5F5', '#F5F5F5', '#F5F5F5']}>
