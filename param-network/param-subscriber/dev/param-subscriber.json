@@ -1,0 +1,279 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "rId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "subscriber",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "sId",
+          "type": "uint256"
+        }
+      ],
+      "name": "onSubscriber",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "rId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_type",
+          "type": "uint256"
+        }
+      ],
+      "name": "onConsent",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "receiptType",
+          "type": "uint256"
+        }
+      ],
+      "name": "addSellerConsent",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "receiptType",
+          "type": "uint256"
+        }
+      ],
+      "name": "addBuyerConsent",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "isValidConsent",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getConsentsForReceipt",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_paramContractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setParamContractAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "payload",
+          "type": "string"
+        },
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "receiptType",
+          "type": "uint256"
+        },
+        {
+          "name": "subscriberAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addSubscriber",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "subscriberAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isSubscriberExists",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "getSubscriberReceipts",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "sId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSubscriber",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSubscribers",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "address": "0xdc425371b50547a7ae44f28e0fee1c78c5aa1d67"
+}

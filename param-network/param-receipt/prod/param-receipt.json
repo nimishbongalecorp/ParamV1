@@ -1,0 +1,625 @@
+{
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_data",
+          "type": "bytes32"
+        }
+      ],
+      "name": "toBytes",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getTransactions",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "transactionId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getTransaction",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getExtendedKnowledgeByReceiptId",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "status",
+          "type": "uint256"
+        }
+      ],
+      "name": "getReceiptsCountByStatus",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "extendedKnowledgeId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getExtendedKnowledge",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "buyerId",
+          "type": "address"
+        }
+      ],
+      "name": "getReceiptsByBuyer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "step",
+          "type": "uint256"
+        }
+      ],
+      "name": "getReceiptsByStep",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "status",
+          "type": "uint256"
+        }
+      ],
+      "name": "getReceiptsByStatus",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "sellerId",
+          "type": "address"
+        }
+      ],
+      "name": "getReceiptsBySeller",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "rId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "status",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "step",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "ekId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "onStatusUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "caller",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "rId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "tId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "status",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "step",
+          "type": "uint256"
+        }
+      ],
+      "name": "onTransactionUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "rId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "onReceipt",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "subscribe",
+          "type": "address"
+        }
+      ],
+      "name": "setSubscriberContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "changeOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "buyerId",
+          "type": "address"
+        },
+        {
+          "name": "jsonLd",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "initProposal",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "sellerId",
+          "type": "address"
+        },
+        {
+          "name": "jsonLd",
+          "type": "string"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "createPO",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "receiptJsonLd",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "acceptProposal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "rejectProposal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "buyerId",
+          "type": "address"
+        },
+        {
+          "name": "jsonLd",
+          "type": "string"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "createInvoice",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "sendInvoice",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "makePayment",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "createReceipt",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        },
+        {
+          "name": "extendedKnowledge",
+          "type": "string"
+        },
+        {
+          "name": "note",
+          "type": "string"
+        }
+      ],
+      "name": "cancelReceipt",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getReceipt",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiptId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getReceiptOwners",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "address": "0xdb07a5e2b45b80a7d320e8b9f043e6179160bfde"
+}

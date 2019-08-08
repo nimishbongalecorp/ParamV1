@@ -3,9 +3,13 @@ package com.day3app;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.tradle.react.UdpSocketsModule;
+import com.peel.react.TcpSocketsModule;
+import com.peel.react.rnos.RNOSModule;
+import com.bitgo.randombytes.RandomBytesPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -26,9 +30,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNGestureHandlerPackage(),
+            new UdpSocketsModule(),
+            new TcpSocketsModule(),
+            new RNOSModule(),
+            new RandomBytesPackage(),
             new LinearGradientPackage(),
-            new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
+            new VectorIconsPackage()
       );
     }
 

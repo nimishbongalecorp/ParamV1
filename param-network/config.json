@@ -1,0 +1,20 @@
+{
+    "privateNodes":[
+        {
+            "rpcURL":"http://52.44.214.192:22000",
+            "publicAddress":["P753KZc9DkKQZ3HhMi334W+EceZQgbgHR/cq9D1cAhc="],
+            "name":"",
+            "privateUrl":"http://52.44.214.192:9081"
+        },{
+            "rpcURL":"http://34.224.243.54:22001",
+            "publicAddress":["nHLzpsjqmIKB02Phyc4+cmd4LQQcl10SmxNKudnNNSo="],
+            "name":"",
+            "privateUrl":"http://34.224.243.54:9081"
+        },{
+            "rpcURL":"http://54.159.74.32:22002",
+            "publicAddress":["9kH7KfNdAlSt1hHNR9ccNoyL46zW6iPDZela0wBoXEo="],
+            "name":"",
+            "privateUrl":"http://54.159.74.32:9081"
+        }
+    ]
+}

@@ -5,19 +5,62 @@ import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab
 import { Content, Container } from "native-base";
 import IndivCard from '../components/indivCard';
 
+import * as Wrapper from '../utils/Wrapper'
+import * as BridgeUtils from '../utils/BridgeUtils'
+
+const Web3 = require('web3');
+
 export default class hello extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            listdata: [],
+            showSpinner: true,
+        }
     }
+
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    fetchData = () => {
+        if (this.state.onSamePage) {
+            this.setState({
+                showSpinner: true
+            })
+        }
+
+        this.fetchTOList().then(data => {
+            this.setState({ listdata: Wrapper.getListingData(data, "TO"), showSpinner: false })
+        })
+    }
+
+
+    fetchTOList = () => {
+
+        var TOListArray = [];
+        return new Promise((resolve, reject) => {
+            BridgeUtils.getAllTOs().then(TOIdList => {
+                for (var index = 0; index < TOIdList.length; index++) {
+                    TOListArray.push(BridgeUtils.getTOFromId(TOIdList[index]))
+                }
+                return Promise.all(TOListArray.reverse());
+            }).then(data => {
+                console.log(TOListArray)
+                resolve(data)
+            }).catch(error => {
+                this.setState({
+                    showSpinner: false
+                })
+                ToastAndroid.show(`ERROR:${error}`, ToastAndroid.SHORT);
+                reject(error)
+            })
+        })
+
+    }
+
     render() {
-        
-        const data = [
-            'Stark Industries',
-            'Korea Retail',
-            'ABC Corporation',
-            'India Retail'
-        ]
 
         return (
             <ScrollableTabView
@@ -40,8 +83,8 @@ export default class hello extends React.Component {
                                 <Text styles={styles.textstyle2}>     Last synced 28 Feb, 02:09{'\n'}</Text>
                             </View>
                             <View style={{ marginLeft: 13, marginRight: 12 }}>
-                                {data.map((item, key) => (
-                                    <IndivCard key={key} title={item}></IndivCard>)
+                                {this.state.listdata.map((item, key) => (
+                                    <IndivCard key={key} title={item.title}></IndivCard>)
                                 )}
                             </View>
                         </Content>
